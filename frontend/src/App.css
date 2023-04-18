@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+
+:root {
+  --primary-font-family: "Roboto", sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -30,8 +36,47 @@ span.input-group-addon {
 }
 
 .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 2px solid red;
+  margin: auto;
+  margin-top: 5vh;
+  min-height: 65vh;
+  padding: 1rem;
+  gap: 2rem;
+  width: 80%;
+  flex-wrap: wrap;
+  font-family: var(--primary-font-family);
+}
+
+.nav {
+  background-color: red;
+}
+
+.heroImg {
+  width: max(20vw, 250px);
+  /* outline: 2px solid blue; */
+}
+
+.register-login {
+  display: flex;
+  flex-wrap: wrap;
+  width: max(40vw, 225px);
+  align-content: center;
+}
+
+.register-login div {
+  width: max(17.5vw, 200px);
+}
+
+.register-login button {
+  width: 120px;
+  margin-top: 15px;
+}
+
+.register-login button:hover {
+  background-color: rgb(61, 61, 193);
+  scale: 1.05;
+  transition: all 0.3s ease-in-out;
 }
