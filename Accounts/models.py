@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
+from django.contrib.postgres.fields import ArrayField
 
 
 class AppUserManager(BaseUserManager):
@@ -29,7 +30,12 @@ class AppUserManager(BaseUserManager):
 class AppUser(AbstractBaseUser, PermissionsMixin):
     user_id = models.AutoField(primary_key=True)
     email = models.EmailField(max_length=50, unique=True)
-    username = models.CharField(max_length=50)
+    username = models.CharField(max_length=50, default="25")
+    age = models.IntegerField(default=1)
+    sex = models.CharField(max_length=20, default="hi")
+    medical_history = ArrayField(models.CharField(
+        max_length=200, default="yo"), blank=True, default=list,)
+
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
     objects = AppUserManager()
