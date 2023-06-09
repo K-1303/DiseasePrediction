@@ -35,7 +35,7 @@ const ContactDoctor = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `http://127.0.0.1:8000/doctor/${doctorType.current}`
+        `/doctor/${doctorType.current}`
       );
       console.log(response.data);
       setDoctors(response.data);
@@ -48,7 +48,7 @@ const ContactDoctor = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://127.0.0.1:8000/doctor/${doctorType.current}`
+          `/doctor/${doctorType.current}`
         );
         console.log(response.data);
         setDoctors(response.data);
