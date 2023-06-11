@@ -77,7 +77,7 @@ const DpWindow = () => {
   useEffect(() => {
     allSymptomsString.current = allSymptoms.join(""); // Convert allSymptoms array to string
     axios
-      .get(`http://127.0.0.1:8000/prediction/${allSymptomsString.current}`)
+      .get(`/prediction/${allSymptomsString.current}`)
       .then((response) => {
         if (symptoms.length != 0) {
           setPrediction(response.data);

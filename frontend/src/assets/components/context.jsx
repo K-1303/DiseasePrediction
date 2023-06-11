@@ -8,7 +8,7 @@ axios.defaults.xsrfHeaderName = "X-CSRFToken";
 axios.defaults.withCredentials = true;
 
 const client = axios.create({
-  baseURL: "http://127.0.0.1:8000",
+  baseURL: "",
 });
 
 const AppProvider = ({ children }) => {
@@ -155,7 +155,7 @@ const AppProvider = ({ children }) => {
   const [medicalhistory, setMedicalHistory] = useState([]);
   const [sex, setSex] = useState("");
   const [loginButtonClicked, setLoginButtonClicked] = useState(false);
-  const url = "http://127.0.0.1:8000/patient";
+  const url = "/patient";
 
   const [data, setData] = useState({});
   const [formData, setFormData] = useState({

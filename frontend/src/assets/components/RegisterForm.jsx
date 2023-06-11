@@ -27,7 +27,11 @@ const RegisterForm = () => {
     if (isPasswordValid(user_password)) {
       try {
         const fetchResponse = await fetch(
+<<<<<<< HEAD
           `http://127.0.0.01:8000/check_email?email=${user_email}`
+=======
+          `/check_email?email=${user_email}`
+>>>>>>> 9b28c4bdd51df5adad7b9b9571f9a1798e890cb8
         );
         const data = await fetchResponse.json();
         console.log(data.email_exists);
@@ -74,7 +78,7 @@ const RegisterForm = () => {
               email.current = event.target.value;
             }}
             color="success"
-            helperText="We'll never share your email"
+    
             required
           />
           <p
