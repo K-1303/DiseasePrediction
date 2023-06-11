@@ -289,9 +289,7 @@ const AppProvider = ({ children }) => {
       });
 
       await fetchData();
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
   const handleDashboardSubmit = async (event) => {
     event.preventDefault();
@@ -302,19 +300,14 @@ const AppProvider = ({ children }) => {
       });
 
       await fetchData();
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const fetchData = async () => {
     try {
       const response = await axios.get(url);
       setData(response.data);
-      console.log(response.data);
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   return (
@@ -362,7 +355,6 @@ const AppProvider = ({ children }) => {
 };
 
 export const useGlobalContext = () => {
-  // console.log(useContext(AppContext));
   return useContext(AppContext);
 };
 

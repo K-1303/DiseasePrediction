@@ -83,9 +83,7 @@ const DpWindow = () => {
           setPrediction(response.data);
         }
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => {});
   }, [copySymptoms]); // axios useEffect
 
   return (

@@ -34,27 +34,17 @@ const ContactDoctor = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(
-        `/doctor/${doctorType.current}`
-      );
-      console.log(response.data);
+      const response = await axios.get(`/doctor/${doctorType.current}`);
       setDoctors(response.data);
-    } catch (error) {
-      console.error(error);
-    }
+    } catch (error) {}
   };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `/doctor/${doctorType.current}`
-        );
-        console.log(response.data);
+        const response = await axios.get(`/doctor/${doctorType.current}`);
         setDoctors(response.data);
-      } catch (error) {
-        console.error(error);
-      }
+      } catch (error) {}
     };
 
     fetchData();
