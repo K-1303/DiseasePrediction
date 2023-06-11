@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from .views import index, load_icon
 from django.views.generic.base import RedirectView
 from django.views.generic.base import TemplateView
