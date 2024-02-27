@@ -10,3 +10,4 @@ imbalanced-learn
 scikit-learn
 psycopg2-binary
 python-dotenv
+pickle5

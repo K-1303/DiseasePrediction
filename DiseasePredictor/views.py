@@ -12,6 +12,7 @@ from rest_framework.response import Response
 import csv
 from django.db import transaction
 import os
+import pickle
 
 
 def insert_patient_data(request):
@@ -59,15 +60,6 @@ def scale_dataset(dataframe, oversample=False):
 
 svm_model = None
 
-data = pd.DataFrame.from_records(
-    symptoms_diseases.objects.all().values()).drop('id', axis=1)
-
-train, X, Y = scale_dataset(data, oversample=True)
-
-svm_model = SVC(probability=True)
-svm_model = svm_model.fit(X, Y)
-
-
 def train(request):
     global svm_model
     data = pd.DataFrame.from_records(
@@ -77,11 +69,19 @@ def train(request):
 
     svm_model = SVC(probability=True)
     svm_model = svm_model.fit(X, Y)
+
+    with open('model.pkl', 'wb') as f:
+        pickle.dump(svm_model, f)
+
     return render(request, 'index.html')
 
 
 @api_view()
 def predict(request, symptoms=''):
+
+    with open('model.pkl', 'rb') as f:
+        svm_model = pickle.load(f)
+
     x = np.asarray(list(symptoms), dtype=np.int_)
     x = x[1:]
     x = x.reshape(-1, 1)

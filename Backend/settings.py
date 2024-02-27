@@ -51,7 +51,7 @@ load_dotenv(env_file_path)
 # Access environment variables
 DATABASE_NAME = os.getenv('DATABASE_NAME')
 USER = os.getenv('USER')
-DATABASE_PASS = os.getenv('DATABASE_PASS')
+PASS = os.getenv('PASS')
 
 
 SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin-allow-popups"
@@ -114,7 +114,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': DATABASE_NAME,
         'USER': USER,
-        'PASSWORD': DATABASE_PASS,
+        'PASSWORD': PASS,
         'HOST': 'localhost',
         'PORT': 5432,
     }
