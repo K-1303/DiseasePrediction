@@ -9,7 +9,7 @@
      ```
      USER = <Postgres_Username>
      DATABASE_NAME = <Database_Name>
-     DATABASE_PASS = <Database_Password>
+     PASS = <Database_Password>
      ```
 
 ## Install Python Dependencies
@@ -37,5 +37,10 @@ cd frontend
 6. Run the following command to install the required frontend dependencies:
 
 npm install
+
+## Run Server
+
+cd ..
+python manage.py runserver
 
 
