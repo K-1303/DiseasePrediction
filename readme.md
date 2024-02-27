@@ -40,7 +40,9 @@ npm install
 
 ## Run Server
 
+7. Run the following commands to run the server:
 cd ..
+
 python manage.py runserver
 
 
