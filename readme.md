@@ -9,7 +9,7 @@
      ```
      USER = <Postgres_Username>
      DATABASE_NAME = <Database_Name>
-     PASS = <Database_Password>
+     PASS = <Password>
      ```
 
 ## Install Python Dependencies
