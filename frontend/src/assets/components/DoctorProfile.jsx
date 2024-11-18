@@ -8,7 +8,10 @@ const DoctorProfile = ({ doctors }) => {
         >
           <img
             className="w-24 h-24 mb-3 rounded-full shadow-lg"
-            src={doctor.image_link}
+            src={
+              doctor.image_link ||
+              `https://img.freepik.com/free-vector/hand-drawn-doctor-cartoon-illustration_52683-125164.jpg?t=st=1731907719~exp=1731911319~hmac=6770b9c815e12fd054c01e7c807f04ef7777a0d6c317b03c0af72be0259207a9&w=1060`
+            }
             alt="Image"
           />
           <h5 className=" text-xl text-gray-900 font-semibold">
