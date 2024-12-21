@@ -38,6 +38,8 @@ cd frontend
 
 npm install
 
+npm run build
+
 ## Run Server
 
 7. Run the following commands to run the server:
